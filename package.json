@@ -1,0 +1,21 @@
+{
+  "name": "projeto",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "start": "npm run start:all",
+    "start:all": "concurrently \"npm run start:payment\" \"npm run start:subscription\"",
+    "start:payment": "cd payment-microservice && npm run start",
+    "start:subscription": "cd subscription-system && npm run start",
+    "build": "concurrently \"npm run build:payment\" \"npm run build:subscription\"",
+    "build:payment": "cd payment-microservice && npm install",
+    "build:subscription": "cd subscription-system && npm install"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "devDependencies": {
+    "concurrently": "^9.1.0"
+  }
+}
